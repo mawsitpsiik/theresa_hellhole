@@ -19,25 +19,25 @@ void loop() {
 
     int read1 =  analogRead(pinA);
     Serial.println(read1);
-    delay(200);
+    delay(400);
     int read2 =  analogRead(pinA);
     Serial.println(read2);
-    delay(200);
+    delay(400);
     int read3 =  analogRead(pinA);
     Serial.println(read3);
-    delay(200);
+    delay(400);
     int read4 =  analogRead(pinA);
     Serial.println(read4);
-    delay(200);
+    delay(400);
     int read5 =  analogRead(pinA);
     Serial.println(read5);
-    delay(200);
+    delay(400);
     
     int readFinal =((read1 + read2 + read3 + read4 + read5)/5);
     
     /*if(readFinal <= 300 && readFinal >= 200) */
     
-    int runningRating =((300 - readFinal)/10); 
+    int runningRating =(map(readFinal, 200, 800, 10, 1)); 
     
     
     Serial.print("Your average conductivity is ");
@@ -45,8 +45,8 @@ void loop() {
     Serial.print(". This gives you a conductivity rating of ");
     Serial.print(runningRating);
     Serial.println("/10.");
+    Serial.println("(Hint: Lower average conductivity means you're more connected to the sensor. Aim for lower!)");
     
     counting = 1;
   }
 }
-
