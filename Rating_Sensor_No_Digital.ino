@@ -3,13 +3,14 @@ int counting = 0;
 
 void setup() {
   Serial.begin(9600); 
-  pinMode(pinA, OUTPUT);
+  pinMode(pinA, OUTPUT); 
+  //setup is just a serial start, which lets me print, and configuring the pin to be an output
 }
 void loop() {
-  while(counting == 0)
+  while(counting == 0) //the "while" loop is to stop it from going multiple times
   {
     Serial.println("Put two fingers pinching the sensor. Readings over 900 means it isn't detecting you");
-    delay(1000); //advice on how to use
+    delay(1000); //the print is advice on how to touch it
 
     int read1 =  analogRead(pinA); //reading the same pin, with a delay, gives new results
     Serial.println(read1); //probably a better way to store these than just 5 variables, but it works
@@ -28,7 +29,7 @@ void loop() {
     delay(400);
     
     int readFinal =((read1 + read2 + read3 + read4 + read5)/5); 
-    //this just takes the mean of the numbers
+    //this just takes the mean of the numbers because it's the most commonly used statistical average
     int runningRating =(map(readFinal, 200, 800, 10, 1)); 
     //arbitrary numbers just to make it a bit more fun to get a rating
     
