@@ -15,8 +15,11 @@ Serial.begin(9600);
 void loop() {
   // put your main code here, to run repeatedly:
 int analogValue = analogRead(readA);
+int digValue = analogRead(readD);
+Serial.print("readD is ");
+Serial.println(readD);
 Serial.print("readA is ");
 Serial.println(analogValue);
-/*Serial.print("readD is ");
-Serial.println(readD);*/
+delay(100);
+
 }
