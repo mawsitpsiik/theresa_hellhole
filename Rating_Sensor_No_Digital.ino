@@ -8,7 +8,7 @@ void setup() {
 void loop() {
   while(counting == 0)
   {
-    Serial.println("Put two fingers pinching the sensor, trying to avoid the metal bar.");
+    Serial.println("Put two fingers pinching the sensor. Readings over 900 means it isn't detecting you");
     delay(1000); //advice on how to use
 
     int read1 =  analogRead(pinA); //reading the same pin, with a delay, gives new results
