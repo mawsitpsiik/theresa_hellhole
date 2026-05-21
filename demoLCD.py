@@ -4,7 +4,6 @@ import subprocess
 L6.init(0x27, 1)
 
 pike = subprocess.check_output(["hostname", "-I"]).decode('utf-8').strip()
-print(pike)
+gar = "IP: " + str(pike)
 
-L6.write(0,0,pike)
-
+L6.write(0,0,gar)
